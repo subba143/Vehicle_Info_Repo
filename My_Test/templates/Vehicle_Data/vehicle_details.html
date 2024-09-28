@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Details</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <h1>Vehicle Details</h1>
+        <div >
+            <table>
+                <tr>
+                    <th>Product_Names</th>
+                    <th>Values</th>
+                </tr>
+                <tr>
+                    <td>VIN:</td>
+                    <td>{{ vehicle.vin }}</td>
+                </tr>
+                <tr>
+                    <td>Make:</td>
+                    <td>{{ vehicle.make }}</td>
+                </tr>
+                <tr>
+                    <td>Model:</td>
+                    <td>{{ vehicle.model }}</td>
+                </tr>
+                <tr>
+                    <td>Year:</td>
+                    <td>{{ vehicle.year }}</td>
+                </tr>
+                <tr>
+                    <td>Color:</td>
+                    <td>{{ vehicle.color }}</td>
+                </tr>
+                <tr>
+                    <td>Mileage:</td>
+                    <td>{{ vehicle.mileage }}</td>
+                </tr>
+                <tr>
+                    <td>Type:</td>
+                    <td>{{ vehicle.v_type }}</td>
+                </tr>
+                <tr>
+                    <td>Seats:</td>
+                    <td>{{ vehicle.seats }}</td>
+                </tr>
+                <tr>
+                    <td>Seat Type:</td>
+                    <td>{{ vehicle.v_seat_type }}</td>
+                </tr>
+                <tr>
+                    <td>Owner:</td>
+                    <td>{{ vehicle.owner.username }}</td>
+                </tr>
+                <tr>
+                    <td>Contact:</td>
+                    <td>{{ vehicle.o_contact }}</td>
+                </tr>
+                <tr>
+                    <td>Feedback:</td>
+                    <td>{{ vehicle.feedback }}</td>
+                </tr>
+            </table><br>
+            <button onclick="redirectToVList()" style="background-color:blue">Home</button>
+        </div>
+    </div>
+</body>
+<script>
+function redirectToVList() {
+    window.location.href = '/v_list';
+}
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Vehicle</title>
+    <style>
+        body{
+            text-align:center;
+            background : yellow;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Update Vehicle</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button><button type="submit" href="v_list/">Cancel</button>
+    </form>
+</body>
+</html>
